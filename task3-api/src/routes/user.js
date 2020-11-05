@@ -8,9 +8,9 @@ const { validation } = require('../middleware/validation')
 
 Route
     .get('/',  userController.getUsers)
-    .get('/:id',  userController.getUserById) 
+    .get('/:name',  userController.getUserByName) 
     .post('/', validation, userController.postUser) 
-    .put('/:id',  userController.putUser) 
-    .delete('/:id',  userController.deleteUser) 
+    .put('/:name',  userController.putUser) 
+    .delete('/:name',  userController.deleteUser) 
     
 module.exports = Route

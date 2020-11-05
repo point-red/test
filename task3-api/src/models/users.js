@@ -13,9 +13,9 @@ module.exports = {
             })
         })
     },
-    getUserById: function(id) {
+    getUserByName: function(name) {
         return new Promise(function(resolve,reject){
-            connection.query(`SELECT * from user WHERE id=${id}`,function (error,result) {
+            connection.query(`SELECT * from user WHERE name=${name}`,function (error,result) {
                 if(!error){
                     resolve(result)
                 }
@@ -41,12 +41,12 @@ module.exports = {
             })
         })
     },
-    putUser: function(id,body) {
+    putUser: function(name,body) {
         return new Promise(function(resolve,reject){
-            connection.query('UPDATE user SET ? WHERE id = ?', [body, id], function(error, result) {
+            connection.query('UPDATE user SET ? WHERE name = ?', [body, name], function(error, result) {
                 if(!error){
                     const newData = {
-                        id: parseInt(id),
+                        name: name,
                         ...body ,
                         
                     }
@@ -58,12 +58,12 @@ module.exports = {
             })
         })
     },
-    deleteUser: function(id) {
+    deleteUser: function(name) {
         return new Promise(function(resolve,reject){
-            connection.query('DELETE from user WHERE id = ?',id, function(error, result) {
+            connection.query('DELETE from user WHERE name = ?',name, function(error, result) {
                 if(!error){
                     const newData = {
-                        id: parseInt(id),
+                        name: name,
                         ...result
                         
                     }

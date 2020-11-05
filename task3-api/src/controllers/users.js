@@ -17,10 +17,10 @@ module.exports = {
         }
 
     },
-    getUserById: async function (request, response) {
+    getUserByName: async function (request, response) {
         try {
-            const id = request.params.id
-            const result = await userModel.getUserById(id)
+            const name = request.params.name
+            const result = await userModel.getUserByName(name)
             return helper.response(response, 200, result)
 
         } catch (error) {
@@ -44,8 +44,8 @@ module.exports = {
     putUser: async function (request, response) {
         try {
             const body = request.body
-            const id = request.params.id
-            const result = await userModel.putUser(id,body)
+            const name = request.params.name
+            const result = await userModel.putUser(name,body)
             return helper.response(response, 200, result)
 
         } catch (error) {
@@ -56,9 +56,9 @@ module.exports = {
     },
     deleteUser: async function (request, response) {
         try {
-            const id = request.params.id
+            const name = request.params.name
           
-            const result = await userModel.deleteUser(id)
+            const result = await userModel.deleteUser(name)
             if(result.affectedRows>0){
                 return helper.response(response, 200, result)
             }

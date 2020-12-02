@@ -5,7 +5,7 @@
 `database table = user`
 
 ```
-name => varchar / string | required
+name => char / string | required
 email => varchar / string | unique
 age => integer / number | optional
 ```

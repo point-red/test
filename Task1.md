@@ -2,7 +2,7 @@
 
 #### 1. Fork this repo
 
-#### 2. Replace < your name > with your real name
+#### 2. Replace < chittiboyina Sukumar> with your real name
 
 ```
 Name : < your name >  

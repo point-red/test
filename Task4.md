@@ -10,7 +10,7 @@ public function getPrice() {
                 return error('this customer cannot make a purchase due to his debt over limit');
             } else {
                 return Price::get('distributor');
-            }
+            
         } else {
             return error('this customer is not active')
         }
@@ -20,7 +20,7 @@ public function getPrice() {
                 return error('this customer cannot make a purchase due to his debt over limit');
             } else {
                 return Price::get('general');
-            }
+            
         } else {
             return error('this customer is not active')
         }
@@ -35,7 +35,7 @@ public function getPrice() {
             return error('this customer is not active')
         }
     }
-}
+
 ```
 
 #### 2. After change the code, make a pull request

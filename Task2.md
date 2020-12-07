@@ -2,26 +2,25 @@
 
 #### 1. Make the code below cleaner, better and reusable
 
-```php
-# Add leading 0 number
-# ex: 5 => 0005
-private function convertNumber($number) {
-    if (strlen($number) === 1) {
-        $number = '000' + $number;
-    }
+```javascript
+// Add leading 0 number
+// ex: 5 => 0005
 
-    if (strlen($number) === 2) {
-        $number = '00' + $number;
-    }
+const convertNumber = (number) => {
+  let addNull = 4
+  addNull -= number.toString().length
 
-    if (strlen($number) === 3) {
-        $number = '0' + $number;
+  if (addNull != 0) {
+    let zero = ''
+    for (let i = 0; i < addNull; i++) {
+      zero += '0'
     }
-
-    return $number;
+    const result = zero + number
+    console.log(result)
+  }
 }
 
-convertNumber(5);
+convertNumber(5)
 ```
 
 #### 2. After change the code, make a pull request

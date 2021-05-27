@@ -5,7 +5,7 @@
 #### 2. Replace < your name > with your real name
 
 ```
-Name : Delfan  
+Name : Delfan Azhar Andhika
 ```
 
 #### 3. Make a pull request

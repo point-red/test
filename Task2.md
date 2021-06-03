@@ -25,3 +25,28 @@ convertNumber(5);
 ```
 
 #### 2. After change the code, make a pull request
+
+#### The code after changes
+
+```php
+# Add leading 0 number
+# ex: 5 => 0005
+private function convertNumber($number) {
+    //Variable Character Length
+    $charLength = strlen($number);
+    
+    if ($charLength == 1) {
+        $number += '000';
+    } elseif ($charLength == 2) {
+        $number += '00';
+    } elseif ($charLength == 3) {
+        $number += '0';
+    } else {
+        echo "Data not valid!";
+    }
+
+    return $number;
+}
+
+convertNumber(5);
+```

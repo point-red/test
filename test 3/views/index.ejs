@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TEST 3</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+  <a class="header-logo">TEST 3</a>
+</header>
+<div class="container">
+  <div class="container-header">
+    <h1>user</h1>
+    <a href="/add-user" class="new-button">Add Data</a>
+  </div>
+  <table class="index-table-wrapper">
+    <thead>
+    <div class="table-head">
+      <span class="">id</span>
+      <span class="">name</span>
+      <span class="">email</span>
+      <span class="" >age</span>
+      <span class="">Action</span>
+    </div>
+    </thead>
+    <tbody>
+    <tr class="table-body">
+      <% users.forEach((user) => { %>
+        <div class="table-head">
+          <span><%= user.id %></span>
+          <span><%= user.name %></span>
+          <span><%= user.email %></span>
+          <span><%= user.age %></span>
+          <span>
+                    <form action="/delete/<%= user.id %>" method="post">
+                      <input type="submit" value="Delete">
+                    </form>
+                  </span>
+          <span><a href="/edit/<%= user.id %>">Edit</a></span>
+        </div>
+      <% }) %>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -5,23 +5,21 @@
 ```php
 # Add leading 0 number
 # ex: 5 => 0005
+<php
+
 private function convertNumber($number) {
     if (strlen($number) === 1) {
         $number = '000' + $number;
-    }
-
-    if (strlen($number) === 2) {
+    } else if (strlen($number) === 2) {
         $number = '00' + $number;
-    }
-
-    if (strlen($number) === 3) {
+    } else   if (strlen($number) === 3) {
         $number = '0' + $number;
     }
-
     return $number;
 }
 
 convertNumber(5);
-```
+
+?>
 
 #### 2. After change the code, make a pull request

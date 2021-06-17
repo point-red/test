@@ -6,7 +6,7 @@
 # Add leading 0 number
 # ex: 5 => 0005
 public function convertNumber($number) {
-    return sprintf("%03d", $number);
+    return sprintf("%04d", $number);
 }
 
 convertNumber(5);

@@ -6,22 +6,28 @@
 # Add leading 0 number
 # ex: 5 => 0005
 private function convertNumber($number) {
-    if (strlen($number) === 1) {
-        $number = '000' + $number;
+    $zero = '';
+    $long = strlen($number);
+    while($long <= 999) {
+        $zero = $zero . '0';
+        $long = $long * 10; 
     }
-
-    if (strlen($number) === 2) {
-        $number = '00' + $number;
-    }
-
-    if (strlen($number) === 3) {
-        $number = '0' + $number;
-    }
-
-    return $number;
+    return $zero + $number;
 }
 
 convertNumber(5);
 ```
+//When I use with javascript
+function convertNumber(number) {
+    let zero = "";
+    let long = number
+    while(long <= 999) {
+        zero = zero + '0';
+        long = long * 10;
+    }
+    return zero + number
+}
+
+console.log(convertNumber(100));
 
 #### 2. After change the code, make a pull request

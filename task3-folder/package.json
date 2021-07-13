@@ -1,0 +1,24 @@
+{
+  "name": "simple-api",
+  "version": "1.0.0",
+  "description": "test assesment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon index"
+  },
+  "keywords": [
+    "Express",
+    "RESTAPI",
+    "MongoDB",
+    "Mongoose"
+  ],
+  "author": "jhorgi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2",
+    "validator": "^13.6.0"
+  }
+}

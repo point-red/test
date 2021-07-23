@@ -14,7 +14,7 @@ public function getPrice() {
         } else {
             return error('this customer is not active')
         }
-                } elseif($customer->group == 'general') {
+    } elseif($customer->group == 'general') {
         if($customer->status == 'active') {
             if($customer->debt > 10000000) {
                 return error('this customer cannot make a purchase due to his debt over limit');
@@ -24,17 +24,7 @@ public function getPrice() {
         } else {
             return error('this customer is not active')
         }
-                } elseif($customer->group == 'general') {
-        if($customer->status == 'active') {
-            if($customer->debt > 10000000) {
-                return error('this customer cannot make a purchase due to his debt over limit');
-            } else {
-                return Price::get('general');
-            }
-        } else {
-            return error('this customer is not active')
-        }
-    }
+    } 
 }
 ```
 

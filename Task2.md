@@ -2,25 +2,23 @@
 
 #### 1. Make the code below cleaner, better and reusable
 
-```php
+```javascript
 # Add leading 0 number
 # ex: 5 => 0005
-private function convertNumber($number) {
-    if (strlen($number) === 1) {
-        $number = '000' + $number;
-    }
+function convertNumber($number) {
+  if (String($number).length === 1) {
+    $number = "000" + $number;
+  } else if (String($number).length === 2) {
+    $number = "00" + $number;
+  } else if (String($number).length === 3) {
+    $number = "0" + $number;
+  } else {
+    $number = $number;
+  }
 
-    if (strlen($number) === 2) {
-        $number = '00' + $number;
-    }
-
-    if (strlen($number) === 3) {
-        $number = '0' + $number;
-    }
-
-    return $number;
+  return $number;
 }
-
+console.log(convertNumber(5));
 convertNumber(5);
 ```
 

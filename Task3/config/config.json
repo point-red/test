@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "adi",
+    "password": "password",
+    "database": "simpleApi_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "adi",
+    "password": "password",
+    "database": "simpleApi_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "adi",
+    "password": "password",
+    "database": "simpleApi_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

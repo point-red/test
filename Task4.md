@@ -10,12 +10,10 @@ $customer->status == "active" && switch ($customer->group) {
     $customer->debt > 10000000 ? return error('this customer cannot make a purchase due to his debt over limit') : return Price::get('distributor');
     break;
   case "general":
-    $customer->debt > 10000000 ? return error('this customer cannot make a purchase due to his debt over limit') : return Price::get('distributor');
+    $customer->debt > 10000000 ? return error('this customer cannot make a purchase due to his debt over limit') : return Price::get('general');
     break;
-
-  default:
-    ;
-
+}
+    if (customer->status !=="active") {
     return error('this customer is not active')
 }
 

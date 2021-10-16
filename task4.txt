@@ -1,0 +1,25 @@
+
+type Customer struct {
+	Group  string
+	Status string
+	Debt   int
+}
+
+func getPrice(customer Customer) interface{} {
+	if customer.Status == "active" {
+		if customer.Debt > 10000000 {
+			return errors.New("this customer cannot make a purchase due to his debt over limit")
+		} else {
+			if customer.Group == "distributor" {
+				return Get("distributor")
+			} else if customer.Group == "general" {
+				return Get("general")
+			}
+		}
+	}
+	return errors.New("this customer is not active")
+}
+
+func Get(s string) interface{} {
+	return "something"
+}

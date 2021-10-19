@@ -1,5 +1,5 @@
 <?php
-function getPrice($customer) {
+function customerCheck($customer) {
     if($customer->status == 'active') {
         if($customer->debt > 10000000) {
             return error('this customer cannot make a purchase due to his debt over limit');

@@ -8,13 +8,9 @@
 private function convertNumber($number) {
     if (strlen($number) === 1) {
         $number = '000' + $number;
-    }
-
-    if (strlen($number) === 2) {
+    }elseif (strlen($number) === 2) {
         $number = '00' + $number;
-    }
-
-    if (strlen($number) === 3) {
+    }elseif (strlen($number) === 3) {
         $number = '0' + $number;
     }
 

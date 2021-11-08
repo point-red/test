@@ -4,12 +4,12 @@
 
 ```php
 
-public function checkStatus($status, $debt) {
+public function checkStatus($status, $debt, $group) {
     if($status == 'active') {
       if($debt > 10000000) {
         return error('this customer cannot make a purchase due to his debt over limit');
       } else {
-        return Price::get('distributor');
+        return Price::get($group);
       }
     } else {
       return error('this customer is not active')
@@ -18,9 +18,9 @@ public function checkStatus($status, $debt) {
 
 public function getPrice() {
   if($customer->group == 'distributor') {
-    checkStatus($customer->status,$customer->debt);
+    checkStatus($customer->status, $customer->debt, $customer->group);
   } elseif($customer->group == 'general') {
-    checkStatus($customer->status,$customer->debt);
+    checkStatus($customer->status, $customer->debt, $customer->group);
   }
 }
 ```
